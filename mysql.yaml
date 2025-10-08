@@ -8,10 +8,10 @@
       state: present
 
   - name: start and enable mysql
-    ansible.buitin.service:
+    ansible.builtin.service:
       name: mysqld
       state: started
       enabled: yes
 
   - name: setup root password
-    ansible.buitin.command:  mysql_secure_installation --set-root-pass RoboShop@1
+    ansible.builtin.command: mysql_secure_installation --set-root-pass RoboShop@1
