@@ -30,4 +30,3 @@
       name: redis
       enabled: yes
       state: started
-
