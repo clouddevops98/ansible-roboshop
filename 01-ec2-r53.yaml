@@ -8,9 +8,10 @@
     domain_name: "somayya.fun"
     instances:
     # - mongodb
-    - redis
+    # - redis
     # - mysql
     # - rabbitmq
+    - catalogue
     
   tasks:
   - name: create ec2 instance
