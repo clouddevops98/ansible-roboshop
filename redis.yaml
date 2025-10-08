@@ -19,7 +19,7 @@
       regexp: '127.0.0.1'
       replace: '0.0.0.0'
 
-  - name: start and enable redis
+  - name: start  redis
     ansible.builtin.service:
       name: redis
       state: started
@@ -30,8 +30,7 @@
       regexp: 'protected-mode'
       line: 'protected-mode no'
 
-  - name: start and enable redis
+  - name: restart redis
     ansible.builtin.service:
       name: redis
-      enabled: yes
       state: restarted
