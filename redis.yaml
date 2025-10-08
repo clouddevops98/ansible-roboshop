@@ -19,6 +19,11 @@
       regexp: '127.0.0.1'
       replace: '0.0.0.0'
 
+  - name: start and enable redis
+    ansible.builtin.service:
+      name: redis
+      state: started
+
   - name: disable proctected mode
     ansible.builtin.lineinfile:
       path: /etc/redis/redis.conf
@@ -29,4 +34,4 @@
     ansible.builtin.service:
       name: redis
       enabled: yes
-      state: started
+      state: restarted
