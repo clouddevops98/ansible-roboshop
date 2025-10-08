@@ -26,8 +26,8 @@
       line: 'protected-mode no'
 
   - name: start and enable redis
-    ansible.builtin.replace:
+    ansible.builtin.service:
       name: redis
       enabled: yes
       state: started
-#
+
