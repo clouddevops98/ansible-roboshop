@@ -8,8 +8,8 @@
     domain_name: "somayya.fun"
     instances:
     # - mongodb
-    - redis
-    # - mysql
+    # - redis
+    - mysql
     # - rabbitmq
     
   tasks:
