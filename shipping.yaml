@@ -17,7 +17,7 @@
     loop:
     - cryptography
     - PyMySQL
-    
+
   - name: create roboshop system user
     ansible.builtin.user:
       name: roboshop
@@ -77,7 +77,7 @@
       login_password: RoboShop@1 
       target: "{{ item }}"
     loop:
-    - /app/db/app-schema.sql 
+    - /app/db/schema.sql 
     - /app/db/app-user.sql 
     - /app/db/master-data.sql
 
