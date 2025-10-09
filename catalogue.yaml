@@ -22,7 +22,7 @@
       home: /app
 
   - name: create app directory
-    ansible.builtn.file:
+    ansible.builtin.file:
       state: directory
       path: /app
 
@@ -35,6 +35,6 @@
     ansible.builtin.unarchive:
       src: /tmp/catalogue.zip
       dest: /app
-      
+
 
 
