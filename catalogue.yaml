@@ -63,7 +63,7 @@
       state: present
 
   - name: connect to mongodb catalogue
-    ansible.builtin.command: mongosh mongodb.somayya.fun </app/db/master-data.js
+    ansible.builtin.command: mongosh mongodb.somayya.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
     register: catalogue_output
 
   - name: print catalogue catalogue output
