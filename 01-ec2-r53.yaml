@@ -7,11 +7,11 @@
     zone_id: "Z0775499YCLL41QUIF01"
     domain_name: "somayya.fun"
     instances:
-    # - mongodb
+    - mongodb
     # - redis
     # - mysql
     # - rabbitmq
-    - catalogue
+    # - catalogue
     
   tasks:
   - name: create ec2 instance
