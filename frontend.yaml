@@ -4,11 +4,14 @@
   tasks: 
   - name: disable default nginx
     ansible.builtin.command: dnf module disable nginx -y
+
+  - name: enable nginx 1.24
+    ansible.builtin.command: dnf module enable nginx:1.24 -y
   
   - name: install nginx
     ansible.builtin.dnf:
       name: nginx
-      state:
+      state: present
 
   - name: remove html directory
     ansible.builtin.file:
@@ -17,8 +20,8 @@
 
   - name: create html directory
     ansible.builtin.file:
-      state: absent
       path: /usr/share/nginx/html/
+      state: directory
 
   - name: download frontend application
     ansible.builtin.get_url:
