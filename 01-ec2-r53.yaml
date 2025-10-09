@@ -14,7 +14,8 @@
     # - catalogue
     # - user
     # - cart
-    - shipping
+    # - shipping
+    - payment
     
   tasks:
   - name: create ec2 instance
