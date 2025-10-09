@@ -75,3 +75,6 @@
   - name: print catalogue catalogue output
     ansible.builtin.debug:
       msg: "{{ catalogue_output }}"
+
+  # - name: load products into mongodb
+  #   ansible.builtin.shell: mongosh --host mongodb.somayya.fun </app/db/master-data.js
