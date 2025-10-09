@@ -1,13 +1,13 @@
 - name: configure frontend server
   hosts: frontend
   become: yes
-  tasks: 
+  tasks:
   - name: disable default nginx
     ansible.builtin.command: dnf module disable nginx -y
 
   - name: enable nginx 1.24
     ansible.builtin.command: dnf module enable nginx:1.24 -y
-  
+
   - name: install nginx
     ansible.builtin.dnf:
       name: nginx
@@ -30,8 +30,8 @@
 
   - name: extract frontend application
     ansible.builtin.unarchive:
-      src: usr/share/nginx/html/
-      dest: usr/share/nginx/html/
+      src: /tmp/frontend.zip
+      dest: /usr/share/nginx/html/
       remote_src: yes
 
   - name: delete default nginx conf
@@ -47,7 +47,7 @@
   - name: restart nginx
     ansible.builtin.service:
       name: nginx
-      state: restarted
+      state: restarted # restarted if you have already started earlier
       enabled: yes
 
   
