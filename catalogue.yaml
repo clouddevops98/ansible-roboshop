@@ -42,7 +42,7 @@
       dest: /app
       remote_src: yes
 
-  - name: Install dependence
+  - name: Install dependencies
     community.general.npm:
       path: /app
 
@@ -50,6 +50,12 @@
     ansible.builtin.copy:
       src: catalogue.service
       dest: /etc/systemd/system/catalogue.service
+
+  - name: copy mongo repo
+    ansible.buildin.copy:
+      src: mongo.repo
+      dest: /etc/yum.repos.d/mongo.repo
+
   
   - name: install mongodb client
     ansible.builtin.package:
