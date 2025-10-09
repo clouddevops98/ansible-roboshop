@@ -68,6 +68,7 @@
 
   - name: evaluate catalogue database
     community.mongodb.mongodb_shell:
+      login_host: mongodb.somayya.fun
       eval: db.getMongo().getDBNames().indexOf('catalogue')
     register: catalogue_output
 
